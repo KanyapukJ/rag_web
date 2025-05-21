@@ -1,4 +1,4 @@
-# Agnos Health RAG Chatbot
+# RAG Chatbot
 
 A Retrieval-Augmented Generation (RAG) chatbot for Agnos Health that automatically crawls and indexes content from the Agnos health forum.
 
