@@ -30,13 +30,13 @@ The system consists of the following components:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/rag_web.git
+git clone https://github.com/KanyapukJ/rag_web.git
 cd rag_web
 ```
 
 2. Create and activate a Conda environment (recommended):
 ```bash
-conda create -n rag_web python=3.9
+conda create -n rag_web python=3.9 -y
 conda activate rag_web
 ```
 
@@ -58,13 +58,18 @@ EMBEDDING_MODEL=bge-m3
 TARGET_URL=https://www.agnoshealth.com/forums # Default website to crawl
 ```
 
-5. Download the required models in Ollama:
-   Open the Ollama application, then in your terminal:
-```bash
-ollama pull llama3.2
-ollama pull bge-m3
-```
-   Verify the models are listed by running `ollama list` in your terminal.
+5. Download and install Ollama:
+
+    - If you haven't already, [download Ollama](https://ollama.com/download) and follow the installation instructions for your operating system.
+
+6. Download the required models in Ollama:
+
+    - Open the Ollama application, then in your terminal:
+    ```bash
+    ollama pull llama3.2
+    ollama pull bge-m3
+    ```
+    - Verify the models are listed by running `ollama list` in your terminal.
 
 ## Usage
 
@@ -81,13 +86,25 @@ conda activate rag_web
 streamlit run app.py
 ```
 
-5. Open your browser at the URL provided by Streamlit (typically http://localhost:8501 or similar).
+5. Open your browser at the URL provided by Streamlit. The application will be accessible at:
+   - **URL**: http://127.0.0.1:8501 or http://localhost:8501
 
 6. Use the sidebar to:
     - **Crawl Website**: Enter a URL and max pages, then click "Start Crawling".
     - View database statistics.
 
 7. Once crawling is complete, you can ask questions in the chat interface. The RAG system will use the crawled content to generate answers.
+
+### Tutorial
+
+The following image shows the main interface of the RAG Web application:
+
+![RAG Web Interface](assets/tutorial.png)
+
+The interface consists of:
+- A sidebar for crawling configuration and database statistics
+- A chat area for interacting with the RAG system
+- Input field at the bottom to ask questions about the crawled content
 
 ## Project Structure
 
@@ -123,7 +140,3 @@ rag_web/
 
 - The first crawl may take some time depending on the website size
 - Be respectful when crawling websites by limiting request frequency
-
-## License
-
-This project is proprietary and confidential. All rights reserved to Agnos Health Co. Ltd. 
