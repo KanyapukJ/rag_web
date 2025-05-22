@@ -52,7 +52,7 @@ cp env.example .env
 ```
 Example `.env` content:
 ```
-OLLAMA_HOST=http://localhost:11434
+OLLAMA_HOST=http://127.0.0.1:8501
 LLM_MODEL=llama3.2
 EMBEDDING_MODEL=bge-m3
 TARGET_URL=https://www.agnoshealth.com/forums # Default website to crawl
