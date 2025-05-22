@@ -118,16 +118,9 @@ async def get_embedding(text: str) -> List[float]:
         return result
     except Exception as e:
         print(f"Error getting embedding for text snippet: {text[:100]}... Error: {e}")
-        # Default dimensionality for bge-m3 is often 1024.
-        # Ensure this matches your model's actual output dimensionality.
         default_dim = 1024 
-        # Attempt to get dimensionality from the embeddings object if possible, else use default
         try:
             if hasattr(embeddings, 'client') and hasattr(embeddings.client, 'show'): # Check for Ollama specific client details
-                # This is a conceptual way; actual API to get dim might differ or not exist
-                # model_info = embeddings.client.show(model_name=EMBEDDING_MODEL)
-                # if 'parameters' in model_info and 'dimensions' in model_info['parameters']:
-                #    default_dim = model_info['parameters']['dimensions']
                 pass # Placeholder if direct dim query is not straightforward
         except:
             pass # Ignore errors trying to get a more specific dimension
